@@ -12,7 +12,9 @@ function Navbar() {
     .then((response) => {
       setMassive(response.data);
     })
-    .catch();
+    .catch((e) => {
+      console.log(e);
+    });
 
   return (
     <div>
@@ -28,6 +30,7 @@ function Navbar() {
               placeholder="Search products"
               onChange={(e) => {
                 setValue(e.target.value);
+                console.log(value);
               }}
             />
           </div>

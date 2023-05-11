@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import "./Cards.css"
+import "./Cards.css";
 
 function Cards() {
   const [cards, setCards] = useState([]);
@@ -12,8 +12,8 @@ function Cards() {
       <div className="row">
         {cards.map((item, index) => {
           return (
-            <div className="col-4">
-              <div className="card" key={index}>
+            <div className="col-4" key={index}>
+              <div className="card">
                 <div className="card-img__wrapper">
                   <img
                     src={item.url}
@@ -24,6 +24,7 @@ function Cards() {
                 <div className="card-body">
                   <h3 className="card-title">${item.narxi}</h3>
                   <h2>{item.name}</h2>
+                  <button className="btn btn-success">Add to cart</button>
                 </div>
               </div>
             </div>

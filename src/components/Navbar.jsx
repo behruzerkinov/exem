@@ -11,6 +11,7 @@ function Navbar() {
   Axios.get("https://api.npoint.io/6ac0330294a630ba100b")
     .then((response) => {
       setMassive(response.data);
+      console.log(response.data);
     })
     .catch((e) => {
       console.log(e);

@@ -3,6 +3,7 @@ import "./Navbar.css";
 import Cart from "./assets/cart.svg";
 import Menu from "./assets/menu.svg";
 import Axios from "axios";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [massive, setMassive] = useState([]);
@@ -11,7 +12,6 @@ function Navbar() {
   Axios.get("https://api.npoint.io/6ac0330294a630ba100b")
     .then((response) => {
       setMassive(response.data);
-      
     })
     .catch((e) => {
       console.log(e);
@@ -35,9 +35,11 @@ function Navbar() {
               }}
             />
           </div>
-          <div className="cart-icon__wrapper">
-            <img src={Cart} alt="cart" className="cart-icon" />
-          </div>
+          <Link to={"/cart"}>
+            <div className="cart-icon__wrapper">
+              <img src={Cart} alt="cart" className="cart-icon" />
+            </div>
+          </Link>
         </div>
       </nav>
       <section>
